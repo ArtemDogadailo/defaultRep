@@ -1,3 +1,6 @@
+//Artem Dogadailo
+//3133807
+
 package griffith;
 
 import static org.junit.jupiter.api.Assertions.*;
