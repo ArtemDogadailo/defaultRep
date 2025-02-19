@@ -28,10 +28,27 @@ class WordTest {
 	@AfterEach
 	void tearDown() throws Exception {
 	}
-
+	
+	//writing test cases for each of the unit test methods 
+	//expected to fail initially
+	//testing a range of values
+	
 	@Test
-	void test() {
-		fail("Not yet implemented");
-	}
+    public void testContains() {
+        Word word = new Word(new char[]{'h', 'e', 'l', 'l', 'o'});
+        assertTrue(word.contains('e')); 
+    }
+
+    @Test
+    public void testLength() {
+        Word word = new Word(new char[]{'h', 'e', 'l', 'l', 'o'});
+        assertEquals(5, word.length()); 
+    }
+
+    @Test
+    public void testNotNull() {
+        Word word = new Word(new char[]{'h', 'e', 'l', 'l', 'o'});
+        assertNotNull(word.getLetters()); 
+    }
 
 }
