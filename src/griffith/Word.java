@@ -7,23 +7,32 @@ public class Word {
 	//adding an attrubute letters
 	private char[] letters;
 
-    // creating constructor
-    public Word(char[] letters) {
-        this.letters = letters;
-    }
+    //creating constructor
+	//modifying constructor
+	public Word(char[] letters) {
+	    if (letters == null) {
+	        throw new IllegalArgumentException("Letters cannot be null");
+	    }
+	    this.letters = letters;
+	}
 
     // Checks if the word contains a given character
-    public boolean contains(char symbol) {
-        return false; 
-    }
+	public boolean contains(char symbol) {
+	    for (char letter : letters) {
+	        if (letter == symbol) {
+	            return true;
+	        }
+	    }
+	    return false;
+	}
 
     // Returns the length of the word
-    public int length() {
-        return 0; 
-    }
+	public int length() {
+	    return letters.length;
+	}
 
     // Returns the letters array
-    public char[] getLetters() {
-        return null; 
-    }
+	public char[] getLetters() {
+	    return letters;
+	}
 }
