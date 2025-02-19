@@ -5,42 +5,55 @@ package griffith;
 
 public class Grades {
 
-	// return max grades
-	public int gradesMax(int[] grades) {
-		int max = Integer.MIN_VALUE;
-		for (int grade : grades) {
-			if (grade > max) {
-				max = grade;
-			}
-		}
-		return max;
-	}
+ // Returns the maximum grade from the array
+ public int gradesMax(int[] grades) {
+     if (grades == null || grades.length == 0) {
+         return Integer.MIN_VALUE; // Safe return value for empty/null arrays
+     }
+     
+     int max = grades[0]; // Start with the first element
+     for (int grade : grades) {
+         if (grade > max) {
+             max = grade;
+         }
+     }
+     return max;
+ }
 
-	// get the sum of array
-	public int gradesTotal(int[] grades) {
-		int sum = 0;
-		for (int grade : grades) {
-			sum += grade;
-		}
-		return sum;
-	}
+ // Returns the sum of all grades in the array
+ public int gradesTotal(int[] grades) {
+     if (grades == null || grades.length == 0) {
+         return 0; // Return 0 for empty/null arrays
+     }
 
-	// get average value of an array
-	public double gradesAverage(int[] grades) {
-		// checking the grades length to avoid dividing by 0
-		if (grades.length == 0)
-			return 0;
-		return (double) gradesTotal(grades) / grades.length;
-	}
+     int sum = 0;
+     for (int grade : grades) {
+         sum += grade;
+     }
+     return sum;
+ }
 
-	// count how many grades less than the minimum grade
-	public int countFails(int[] grades, int minGrade) {
-		int count = 0;
-		for (int grade : grades) {
-			if (grade < minGrade) {
-				count++;
-			}
-		}
-		return count;
-	}
+ // Returns the average of all grades
+ public double gradesAverage(int[] grades) {
+     if (grades == null || grades.length == 0) {
+         return 0.0; // Return 0.0 for empty/null arrays
+     }
+     return (double) gradesTotal(grades) / grades.length;
+ }
+
+ // Counts how many grades are below minGrade
+ public int countFails(int[] grades, int minGrade) {
+     if (grades == null || grades.length == 0) {
+         return 0; // Return 0 for empty/null arrays
+     }
+
+     int count = 0;
+     for (int grade : grades) {
+         if (grade < minGrade) {
+             count++;
+         }
+     }
+     return count;
+ }
 }
+
